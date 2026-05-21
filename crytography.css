@@ -1,0 +1,22 @@
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#0e0f12;color:#e9eaee}
+header{padding:28px 20px 10px;max-width:980px;margin:0 auto}
+h1{margin:0 0 6px;font-size:28px;font-weight:800}
+.muted{opacity:.6;font-weight:600}
+.tagline{opacity:.8;margin:0}
+main{max-width:980px;margin:14px auto;padding:0 20px;display:grid;gap:14px}
+.card{background:#17191f;border:1px solid #262a33;border-radius:14px;padding:16px 16px}
+.card h2,.card h3{margin-top:0}
+label{display:block;font-weight:600;margin:10px 0 6px}
+textarea,input,select{width:100%;background:#0f1116;color:#e9eaee;border:1px solid #2a2f3a;border-radius:10px;padding:10px 12px}
+textarea:read-only{opacity:.9}
+.grid{display:grid;gap:10px}
+.grid.two{grid-template-columns:repeat(2,1fr)}
+@media(max-width:900px){.grid.two{grid-template-columns:1fr}}
+.actions{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+button{background:#2d6cff;border:none;color:white;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer}
+button:hover{filter:brightness(1.05)}
+.status{margin-top:10px;min-height:20px;opacity:.9}
+.output .result-row{display:grid;grid-template-columns:180px 1fr;gap:8px;margin-bottom:8px}
+footer{max-width:980px;margin:10px auto 24px;padding:0 20px;opacity:.6}
+.value{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
