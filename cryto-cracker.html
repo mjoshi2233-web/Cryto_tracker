@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Crypto Cracker (Web)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>AI Crypto Cracker <span class="muted">(Web Prototype)</span></h1>
+    <p class="tagline">Detect & break classical ciphers (Caesar · Rail Fence) — fully client-side.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <label for="ciphertext">Ciphertext</label>
+      <textarea id="ciphertext" rows="7" placeholder="Paste your ciphertext here...">LXFOPVEFRNHR</textarea>
+      
+      <div class="grid two">
+        <div>
+          <label for="assume">Assume Cipher (optional)</label>
+          <select id="assume">
+            <option value="">Auto-detect</option>
+            <option value="caesar">Caesar</option>
+            <option value="railfence">Rail Fence</option>
+          </select>
+        </div>
+
+        <div>
+          <!-- kept as spacer so layout stays consistent with your CSS -->
+          <label style="visibility:hidden">_</label>
+          <div style="height:1px"></div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="btnRun">Crack</button>
+        <button id="btnDemo1">Demo: Caesar</button>
+        <button id="btnDemo2">Demo: Rail Fence</button>
+      </div>
+
+      <div id="status" class="status"></div>
+    </section>
+
+    <section class="card output">
+      <h2>Result</h2>
+      <div class="result-row">
+        <div class="label">Detected/Assumed:</div>
+        <div id="outType" class="value">—</div>
+      </div>
+      <div class="result-row">
+        <div class="label">Recovered Key:</div>
+        <div id="outKey" class="value">—</div>
+      </div>
+      <div class="result-row">
+        <div class="label">Details:</div>
+        <div id="outDetails" class="value">—</div>
+      </div>
+      <label>Plaintext</label>
+      <textarea id="outPlain" rows="8" readonly></textarea>
+    </section>
+
+    <section class="card">
+      <h3>Notes</h3>
+      <ul>
+        <li>Auto-detection now chooses between Caesar and Rail Fence only.</li>
+        <li>Rail Fence tries rail values (2–10) and chooses the best-scoring plaintext.</li>
+        <li>Everything runs locally in your browser — no server required.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2025 — PBL demo. Classical ciphers only.</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
